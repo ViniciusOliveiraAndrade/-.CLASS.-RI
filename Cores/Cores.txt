@@ -1,0 +1,5 @@
+core_Nstop_Nstem: Sem remover stop_words e sem fazer stemming
+core_stop_Nstem: Remover stop_words e sem fazer stemming
+core_Nstop_stem: Sem remover stop_words e fazer stemming
+core_stop_stem: Remover stop_words e fazer stemming
+#core_stop_stem_ngram: Remover stop_words , fazer stemming e Ngram

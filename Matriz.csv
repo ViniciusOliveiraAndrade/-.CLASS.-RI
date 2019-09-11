@@ -1,0 +1,586 @@
+#,key,summary,description,enabling wifi it does not connect,no audio is heard on calling,query 3,Legenda,,
+1,REGRESSION-1435,No wifi,"It started with intermittent loss of the wifi connection, which also happened before and it always had been very slow using the 5GHz band.
+But now I'm unable to even scan for wifi networks and of course connect to any network.
+I rebooted several times and cleared all my wifi profiles, but without any changes.
+In the attached logs, which I gathered using adb, there are some hints.
+E.g. in the dmesg output ""  301.045505 wlan: 8627:E :CTL Error returned WDI_ProcessInitScanRspi:0 BMPS0"" or ""  283.228657 14:12:31.384574 000000014AC3E63F MC_Th  wlan: E :HDD wlan_hdd_tdls_scan_done_callback: 3074: Failed to revert: Mode=0, BTC enabled=1"".
+In the logcat output are also some hints ""NetdConnector: NDC Command \{93 softap fwreload wlan0 STA} took too long (787ms)"".",1,0,,"A ""query 1"" é a definida pela 
+prof/monitor, a ""query 2"" foi definida por nós. Pode 
+colocar mais query se quiser.","query 1 = ""enabling wifi it does not connect"" 
+query2.1=""no audio is heard on calling""
+query2.2=""""
+",no audio is heard on calling when call starts with earphones
+2,REGRESSION-1596,Wifi disconnects,"Phone Informations
+* Lineage version 14.1
+* Pico Gapps, installed it ~9 months ago
+What you did:
+* Wipe data: y
+* Upgrade from previous official cm build: n
+* Restore with titanium backup: y, a long time ago and no problems occured
+You're using (if yes write which one) :
+*no mods
+Bug info:
+* I donÂ´t know if the problem occured on older versions but I think it didnt. That is the reason why I can't tell when it worked last time.
+* Repro steps:
+I was using the Fritz!TV app to listen to radio that is transmitted over DVB-C and sent by my Fritz!Box 6590 Cable to my device via wifi. Suddenly the wifi connection stopped even though I was not far away from the router (~10:34:45). Then I waited a bit and it reconnected at ~10:35:20.
+I have not changed any advanced options for my wifi (Schippers-EG-C). 
+The problem is very annoying because it happens very often and sometimes the device does not even reconnect to the wifi. Also IZ facing this problem with many other wifi routers. 
+Thank you very much!",1,0,,,,
+3,REGRESSION-1530,Wifi issue,"I noticed the problem with the wifi does not really depend on the revision of the latest firmware.
+The wifi module is disabled without the ability to enable on any revision of firmware under version 14.1, after turning off the phone, for one reason or another.
+The problem can not be solved if the phone is restarted, in this case the full restoration of the factory settings or firmware reflashing helps.
+But if the phone is turned off then the probability of repeating this problem is high. I checked most of the firmware versions on the smartphone *Nexus 6p (Angler)* and constantly encountered this problem.
+_*PS.*_
+Also some other users are faced with this problem on other devices. I can not say exactly which devices, since I did not remember, sorry.",0,0,,,,
+4,REGRESSION-1529,wifi issue,"Dear Developers,
+Hope you are fine
+When I flash any version of lineage for my kiwi device, The device doesn't recognize some wifi networks when i get back to stock rom it works fine, Is that related to a wifi config or a rom issue 
+Thank you",0,0,,,,
+5,REGRESSION-1112,Can't activate wifi,"After updating with the 20170913 build, the wifi refuse to activate. 
+After a downgrade to the 20170906 build, it activate again.",0,0,,,,
+6,REGRESSION-945,wifi problem,"after the tablet goes to sleep mode the wifi turns off, also when I restart it wont connect automatically I must go manually. I dont know if it work in the older version! its my first version I installed it.",0,0,,,,
+7,REGRESSION-684,wifi disconnecting,"Wifi disconnects automatically every cca 2 minutes, its really annoying.. but the strange thing is that not every wifi is disconnecting... for example, wifi in school works with no problems, but at home it disconnects.. I hope you find fix, because I really like this OS",0,0,,,,
+8,BUGBASH-1372,WiFi unstable,WiFi is not working properly. Switches off and on.,0,0,,,,
+9,BUGBASH-1139,WIFI issue,"I have installed lineage os and it still has *WIFI issue*. 
+*WIFI connect only at full strength*, otherwise _saved_.
+and *cannot* access service menu (**#0011#*) to *turn off wifi power saving mode*. 
+help!",0,0,,,,
+10,BUGBASH-1118,WIFI not connecting,"IZ getting this error whenever I try to connect.
+It shows as saved, when i hit connect, it shows connecting, then stops and shows ""Saved""
+E/WifiStateMachine: Supplicant SSID temporary disabled:ID: 77 SSID: ""Royal Abode"" PROVIDER-NAME: null BSSID: null FQDN: null PRIO: 94 HIDDEN: false
+ NetworkSelectionStatus NETWORK_SELECTION_ENABLED
+ hasEverConnected: true
+ numAssociation 45
+ update time=10-14T01:45:30.799
+ creationtime=10-11T01:54:40.032
+ validatedInternetAccess
+ KeyMgmt: WPA_PSK Protocols: WPA RSN
+ AuthAlgorithms:
+ PairwiseCiphers: TKIP CCMP
+ GroupCiphers: TKIP CCMP
+ PSK: *
+ sim_num *
+ Enterprise config:
+ altsubject_match NULL
+ password <removed>
+ ca_path NULL
+ subject_match NULL
+ engine 0
+ client_cert NULL
+ anonymous_identity NULL
+ ca_cert NULL
+ identity NULL
+ domain_suffix_match NULL
+ key_id NULL
+ engine_id NULL
+ IP config:
+ IP assignment: DHCP
+ Proxy settings: NONE
+ networkSelectionBSSID=any cuid=1000 cname=android.uid.system:1000 luid=1000 lname=android.uid.system:1000 lcuid=1000 userApproved=USER_APPROVED noInternetAccessExpected=false isCarrierNetwork=false roamingFailureBlackListTimeMilli: 1000
+ triggeredLow: 0 triggeredBad: 0 triggeredNotHigh: 0
+ ticksLow: 0 ticksBad: 0 ticksNotHigh: 0
+ triggeredJoin: 0
+10-14T01:45:32.547 4828-5370/system_process E/SupplicantStateTracker: Ignoring \{ when=-20ms what=147499 target=com.android.internal.util.StateMachine$SmHandler }",1,0,,,,
+11,BUGBASH-1068,WIFI not working,"It requires many tries to turn on or off WIFI. When I turn ON WIFI it cannot find any routers to connect to.  But apps do not try to use cellular when wifi is turned on so I have no connection. After many tries I succeed to turn off WIFI, and the phone can use cellular data.
+I have used lineageOS for my Nexus 5 since the transition from cyanogenmod to LineageOS and have update LineageOS every week. For many month I have used ElementalX kernel together with this os and have not had this issue until this weekly build.
+I updated OTA. After that I also sideloaded the same zip from pc and wiped cache/dalvik cache, but it did not help anything.",1,0,,,,
+12,BUGBASH-244,Wifi bug,"When i did update 20170222 to 20170302 build my device get this bug sometimes. Sometimes wifi connection lost and i need manual connect on wifi list or reboot device. So now, everytime reboot is the best fix for this",0,0,,,,
+13,REGRESSION-708,WiFi doesn't auto connect to wifi networks when enabled,"When enabling wifi it doesn't connect to any network that is saved, I need to go to wifi and select the network in order to connect each time! So lets say I'm on my office and open wifi ...no internet, need to select the network in order to work.
+If I'm home? the same, if I'm in a friends house the same ..so it's not an issue that happens in a specific spot(router/ap etc), this happens with this version but also with the previous one
+Last good build date: unknown, but the field requires a date so 1/Jan/00 it is :P",1,0,,,,
+14,BUGBASH-696,Moto E wifi MAC error and wifi not turning on,"Fresh installation of lineage OS and nothing else, Wifi Mac wasT01:00:00:00:00:00 and wifi can't able to turn on. And i don't know how to attach logcat.",0,0,,,,
+15,REGRESSION-1342,Wifi activation not possible,"Like in -BUGBASH-78- I'm unable to enable Wifi and Bluetooth is not working, either. The MAC-address is also ""02:00:00:00:00:00"". I'm using a Xiaomi Kate.
+I did several wipes, formats of the data partition and fresh installations of LOS, but it did not fix this issue for me. I also installed the MIUI stock again.
+The issue occured after the phone crashed, restarted and got stock in a boot-loop and I had to reflash LineageOS.
+Before the crash I was using Xposed framework.
+I also opened a thread in the XDA forum for it:
+XDA-Thread|https://forum.xda-developers.com/redmi-note-3/help/help-wifi-stopped-wifihw-failed-to-t3697434",0,0,,,,
+16,REGRESSION-1143,WiFi does not automatically connect,"From the affected nightly build version on, the device does not automatically connect to discovered and saved WiFi networks. If i revert back to the last good version, functionality is restored immediately. If i return to the affected version, the issue reoccurs.
+After flashing each version, system and dalvik cache was wiped from within TWRP to make sure it would not cause the issue.",1,0,,,,
+17,REGRESSION-1002,wifi packet loss,"Connecting to wifi needs multiple tries to be successful, even then the Internet connection is slow. In adb shell when I run ping google.com I get ~20% packet loss.
+Attached are logcat when connecting and when pinging google.",0,0,,,,
+18,REGRESSION-660,Wifi connection problem,Wifi connection have a lot of problem. My device can't switch automatically WiFi hotspot...I have to change it manually and usually I have to reboot my phone,0,0,,,,
+19,REGRESSION-648,WIFI CONNECTION PROBLEM,"Connection to WiFi networks had a lot of problem...It does not connect even if it is a wifi with password already stored. After several attempts to connect the WiFi manually by clicking on ""connect button in the wifi ettings""  erase the password and I have to re-enter it. But it doesn't work even doing this...I'm sure it's not a problem of the wifi modem because this happen with ALL WIFI. The only way to connect the devide it's reboot it several times..
+Another problem that I find from the previous version of LineageOs it's that when I unlock the screen of my device I can not interact with the touch and I have to lock the device and then unlock it several times.
+Beside this with the last 2/3 update of the Rom my device consumes 30% more battery than the past Roms.",1,0,,,,
+20,REGRESSION-477,Wifi Direct does not connect,"Whenever I try to connect with any device through p2p there's this log:
+{quote}05-12T01:39:28.987 6294 6294 E wpa_supplicant: Failed to create interface p2p-p2p0-0: -34 (Math result not representable): /system/bin/wpa_supplicant
+05-12T01:39:28.987 6294 6294 E wpa_supplicant: P2P: Failed to create new group interface: /system/bin/wpa_supplicant
+05-12T01:39:28.987 6294 6294 E wpa_supplicant: P2P: Failed to add group interface: /system/bin/wpa_supplicant{quote}
+ps: this issue was only verified by me in the latest version (9/may/2017) and in the version before it, with same log",0,0,,,,
+21,REGRESSION-222,wifi randomly disconnects,"wifi randomly disconnects on both 2.4 and 5 GHz. Comes back after some seconds. Might be the same issue as BUGBASH-32, but since for my hero2lte it only started with 20170314, I report it as a regression.",0,0,,,,
+22,REGRESSION-88,WiFi disconnects sometimes,Sometimes I have no internet eventhough the phone shows it is connected to the WiFi network. When I try to use an app that requires internet connection it doesn't download the content. Also the browser doesn't work,0,0,,,,
+23,BUGBASH-1341,Weak wifi signal,"Hi,
+The wifi signal is *very* weak on lineageOS, which renders the wifi nearly unusable: The phone never reports full signal strength, even at 10 cm of the router, and the wiki connection drops if I'm, like, 5m away from the router.
+This is definitely a software issue, because I don't have the issue on the stock firmware.
+What I tried so far:
+ * different radios: no change, as expected
+ * clean install of the last 4 versions of LineageOS ,with and without Gapps: no change
+ * reinstall stock firmware (full wipe): no issue on stock firmware
+Some investigations:
+ * the wpa supplicatant conf is slightly different on stock firmware (wpa_supplicant.conf, wpa_supplicant_overlay.conf and p2p_supplicant_overlay.conf)
+ * there seems to be a lot more firmware files on stock (in etc/wifi, not vendor/firmware):
+{{root@portab:/mnt/etc/wifi # sha1sum * }}
+{{928617218edde68c89aec958c4f419746ea4a6ac  bcmdhd_apsta.bin_b1 }}
+{{1685ffe3b993b8611fe3eaa97d8a10551d5feea6  bcmdhd_apsta.bin_b90s_b1 }}
+{{6ee479b1c12fd906b740089730e7283bff4e19ee  bcmdhd_apsta.bin_c0 }}
+{{e13a3a9b22629b369a4a1186c61aee98af4539c9  bcmdhd_ibss.bin_b1 }}
+{{efbc5798ec546d2ef0dd5041c00d2519bac7b052  bcmdhd_ibss.bin_b90s_b1 }}
+{{e654999be10a39c124e70edd4698af8e5572451d  bcmdhd_ibss.bin_c0 }}
+{{31f912d5fa8deae65b37ffca4b4a4b9d05d23bb6  bcmdhd_mfg2.bin_b1 }}
+{{31f912d5fa8deae65b37ffca4b4a4b9d05d23bb6  bcmdhd_mfg2.bin_b90s_b1 }}
+{{31f912d5fa8deae65b37ffca4b4a4b9d05d23bb6  bcmdhd_mfg2.bin_c0 }}
+{{36832614b857b61722abeea647df2bbf70120b85  bcmdhd_mfg.bin_b1 }}
+{{68616e6e8da919d1e79938ca7445ab65b0d7217c  bcmdhd_mfg.bin_b90s_b1 }}
+{{5cafcb675ef038151ca4d381134afcd67ee11e0d  bcmdhd_mfg.bin_c0 }}
+{{928617218edde68c89aec958c4f419746ea4a6ac  bcmdhd_sta.bin_b1 }}
+{{1685ffe3b993b8611fe3eaa97d8a10551d5feea6  bcmdhd_sta.bin_b90s_b1 }}
+{{0c80c352fe53a70a903d63d26318f4421e8fc232  bcmdhd_sta.bin_c0 }}
+{{f979504d404ffe8e2379f98ca58e897458933707  cred.conf }}
+{{747b816d2e7fdcafe06367253edc8cd110d335d4  nvram_mfg.txt }}
+{{f0dc189c4ced5ac438c4617857c1a0987869bfd9  nvram_mfg.txt_b1 }}
+{{3d05d378bf894c3c4a31d1b835b986fe8a2a6f82  nvram_mfg.txt_c0 }}
+{{18f94c0e33301682951ee967e68caf5d547f40ae  nvram_mfg.txt_murata }}
+{{18f94c0e33301682951ee967e68caf5d547f40ae  nvram_mfg.txt_murata_b1 }}
+{{1719f61d0a3e7d94b374b02ba81e8163e9af282e  nvram_mfg.txt_murata_c0 }}
+{{6b13c652832d8fe207068f5202da4364dca5c44a  nvram_mfg.txt_wisol }}
+{{2de8097f4c20c486f9580f777749e56801527238  nvram_mfg.txt_wisol_b1 }}
+{{6b13c652832d8fe207068f5202da4364dca5c44a  nvram_mfg.txt_wisol_c0 }}
+{{261b1a3f89507abd28a39c1b980f7d27f1966285  nvram_net.txt }}
+{{f1905b76b6f6b4a07a8b00d0cb6670fdfc211372  nvram_net.txt_b1 }}
+{{20f5afa09cf3950e474443acfa7644e19c1133af  nvram_net.txt_c0 }}
+{{8b8d0295a0ae95d8153b822250ec3234bf65398f  nvram_net.txt_murata }}
+{{8b8d0295a0ae95d8153b822250ec3234bf65398f  nvram_net.txt_murata_b1 }}
+{{ab52ec49dcfe555f5a0bb70de82d5bd0d1c01cac  nvram_net.txt_murata_c0 }}
+{{d083c42fc7eb1f47744b7d15ccde89f07df21bb5  nvram_net.txt_wisol }}
+{{d083c42fc7eb1f47744b7d15ccde89f07df21bb5  nvram_net.txt_wisol_b1 }}
+{{d083c42fc7eb1f47744b7d15ccde89f07df21bb5  nvram_net.txt_wisol_c0 }}
+{{b8b8d3dc3ee19b4f4a668a56de350c42d1586ec1  p2p_supplicant_overlay.conf }}
+{{c4f641c9893a9de87bd3c8ed236008a04e8fe78b  wpa_supplicant.conf }}
+{{5c46d477675f3e87db6921ed80f8892cce10643b  wpa_supplicant_overlay.conf}}
+Let me know how I can help debug this weird issue.
+Best regards, NicolaF",0,0,,,,
+24,BUGBASH-1337,WiFi doesn't connect automatically,"After installing Lineage OS and nothing else, after the first reboot the WiFi will not automatically connect after a reboot, or turning WiFi off and on, or switching into and out of airplane mode, etc. It will connect if you select the network and tell it to connect. The attached logcat is after a reboot then connecting then turning off and on WiFi. I've tried this with several weekly versions with the same result. Please let me know if you need additional information or if you want me to test anything. Thanks.",1,0,,,,
+25,BUGBASH-1250,Wifi direct not working,"Wifi direct doesn't work. when tapping scan for devices, nothing exept the tap animation happens. A random device name is given/seen as android (...). Apps also can't read it.",0,0,,,,
+26,BUGBASH-574,WiFi switches off when display is off,"Hi,
+Randomly but always after screen is off or a reboot WiFi switches off, and to turn it back on you have to switch it on-off several times. E.g. on the attached screenshot it is On, but doesn't detect networks.",0,0,,,,
+27,BUGBASH-438,"wifi is not able to connect,","Hello Team,
+IZ using Lineane 14.1 os, and when i connected to wifi, its hows connected and in bracket it shows no internet. I have tried to connect different wifi still same issue.
+Please find attached snap
+Can you Please fix this issue in next patch.",1,0,,,,
+28,BUGBASH-200,WiFi disconnects sometimes,Sometimes I have no internet eventhough the phone shows it is connected to the WiFi network. When I try to use an app that requires internet connection it doesn't download the content. Also the browser doesn't work,0,0,,,,
+29,BUGBASH-78,Wifi activation not possible,"Trying to enable Wifi in settings has no effect, the switch just turns back into the ""off"" position.
+The MAC address of the wifi interface is shown as ""02:00:00:00:00:00""
+The image has been installed after a complete wipe.
+logcat output while trying to enable the wifi twice:
+{quote}02-04T01:13:41.608 4778 7775 D WifiService: setWifiEnabled: true pid=6648, uid=1000
+02-04T01:13:41.609 4778 6199 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+02-04T01:13:41.607 4871 4871 W Binder:3754_2: type=1400 audit(0.0:29): avc: denied \{ search } for name=""/"" dev=""mmcblk0p21"" ino=1 scontext=u:r:netd:s0 tcontext=u:object_r:firmware_file:s0 tclass=dir permissive=0
+02-04T01:13:41.616 3744 4297 D audio_hw_primary: start_output_stream: enter: stream(0xf525d000)usecase(1: low-latency-playback) devices(0x2)
+02-04T01:13:41.616 3744 4297 D audio_hw_primary: select_devices: out_snd_device(2: speaker) in_snd_device(0: )
+02-04T01:13:41.616 3744 4297 W msm8916_platform: Codec backend bitwidth 16, samplerate 48000
+02-04T01:13:41.616 3744 4297 D hardware_info: hw_info_append_hw_type : device_name = speaker
+02-04T01:13:41.616 3744 4297 D audio_hw_primary: enable_snd_device: snd_device(2: speaker)
+02-04T01:13:41.618 3744 4297 W audio_hw_utils: audio_extn_utils_update_stream_app_type_cfg: App type could not be selected. Falling back to default
+02-04T01:13:41.618 3744 4297 I audio_hw_primary: select_devices Selected apptype: 69936
+02-04T01:13:41.618 3744 4297 D ACDB-LOADER: ACDB -> send_audio_cal, acdb_id = 15, path = 0
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> send_asm_topology
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_STREAM_TOPOLOGY_ID
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> send_adm_topology
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> send_audtable
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE_SIZE
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_CAL
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> send_audvoltable
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_STEP_TABLE
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> send_afe_cal
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AFE_COMMON_TABLE
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> AUDIO_SET_AFE_CAL
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> send_hw_delay : acdb_id = 15 path = 0
+02-04T01:13:41.619 3744 4297 D ACDB-LOADER: ACDB -> ACDB_AVSYNC_INFO: ACDB_CMD_GET_DEVICE_PROPERTY
+02-04T01:13:41.620 3744 4297 I audio_hw_utils: audio_extn_utils_send_app_type_cfg app_type 69936, acdb_dev_id 15, sample_rate 48000
+02-04T01:13:41.620 3744 4297 D audio_hw_primary: enable_audio_route: apply mixer and update path: low-latency-playback
+02-04T01:13:41.621 3744 4297 D audio_hw_primary: select_devices: done
+02-04T01:13:41.637 3744 4297 D msm8916_platform: platform_set_channel_map mixer_ctl_name:Playback Channel Map12
+02-04T01:13:41.638 3744 4297 D msm8916_platform: platform_set_channel_map: set mapping(1 2 3 0 0 0 0 0) for channel:2
+02-04T01:13:41.638 3744 4297 D audio_hw_primary: start_output_stream: exit
+02-04T01:13:41.710 3754 4871 E WifiHW : Failed to write wlan fw path param (Operation not permitted)
+02-04T01:13:41.710 3754 4871 E SoftapController: Softap fwReload failed
+02-04T01:13:41.711 4778 6199 E WifiStateMachine: Failed to reload STA firmware java.lang.IllegalStateException: command '42 softap fwreload wlan0 STA' failed with '400 42 SoftAP command has failed'
+02-04T01:13:41.713 4778 4778 E WifiController: WifiControllerWifi turn on failed
+02-04T01:13:41.745 6648 10443 D Index : Deleting data for locale 'de_DE' took 5 millis
+02-04T01:13:41.751 6648 10443 D Index : Indexing locale 'de_DE' took 6 millis
+02-04T01:13:42.522 4778 7775 D WifiService: setWifiEnabled: true pid=6648, uid=1000
+02-04T01:13:42.523 4778 6199 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+02-04T01:13:42.517 4871 4871 W Binder:3754_2: type=1400 audit(0.0:30): avc: denied \{ search } for name=""/"" dev=""mmcblk0p21"" ino=1 scontext=u:r:netd:s0 tcontext=u:object_r:firmware_file:s0 tclass=dir permissive=0
+02-04T01:13:42.602 3754 4871 E WifiHW : Failed to write wlan fw path param (Operation not permitted)
+02-04T01:13:42.602 3754 4871 E SoftapController: Softap fwReload failed
+02-04T01:13:42.605 4778 6199 E WifiStateMachine: Failed to reload STA firmware java.lang.IllegalStateException: command '43 softap fwreload wlan0 STA' failed with '400 43 SoftAP command has failed'
+02-04T01:13:42.606 4778 4778 E WifiController: WifiControllerWifi turn on failed
+02-04T01:13:42.645 6648 10442 D Index : Deleting data for locale 'de_DE' took 6 millis
+02-04T01:13:42.656 6648 10442 D Index : Indexing locale 'de_DE' took 11 millis
+{quote}
+Output of 'adb logcat | grep -i wifi'
+{quote}02-04T01:10:42.810 4778 4778 W PackageManager: Unknown permission android.permission.ACCESS_SUPERUSER in package de.arcus.wifipasswordreader
+02-04T01:10:49.701 4778 6190 W PackageManager: Unknown permission android.permission.ACCESS_SUPERUSER in package de.arcus.wifipasswordreader
+02-04T01:10:50.156 4778 4778 I SystemServiceManager: Starting com.android.server.wifi.p2p.WifiP2pService
+02-04T01:10:50.246 4778 4778 I SystemServiceManager: Starting com.android.server.wifi.WifiService
+02-04T01:10:50.699 4778 4778 I SystemServiceManager: Starting com.android.server.wifi.scanner.WifiScanningService
+02-04T01:10:50.710 4778 4778 I SystemServiceManager: Starting com.android.server.wifi.RttService
+02-04T01:10:50.737 4778 4778 D ConnectivityService: wifiOnly=false
+02-04T01:10:51.577 4778 4778 I WifiService: WifiService starting up with Wi-Fi enabled
+02-04T01:10:51.581 4778 4778 D WifiService: setWifiEnabled: true pid=4778, uid=1000
+02-04T01:10:56.945 6627 6627 D MccTable: WIFI_COUNTRY_CODE set to de
+02-04T01:10:56.949 4778 6656 I WifiService: WifiService trying to set country code to de with persist set to false
+02-04T01:10:57.478 4778 6198 D WifiService: New client listening to asynchronous messages
+02-04T01:11:05.594 4778 6242 D ConnectivityService: Got NetworkFactory Messenger for WIFI
+02-04T01:11:05.595 4778 6242 D ConnectivityService: Got NetworkFactory Messenger for WIFI_UT
+02-04T01:11:11.059 4778 6199 D WifiNative-HAL: Failing getSupportedFeatureset because HAL isn't started
+02-04T01:11:12.741 4778 6199 D WifiNative-HAL: Failing getSupportedFeatureset because HAL isn't started
+02-04T01:11:13.590 4778 7756 I ActivityManager: START u0 \{flg=0x8000 cmp=com.android.settings/.Settings$WifiSettingsActivity (has extras)} from uid 1000 on display 0
+02-04T01:11:13.998 4778 4919 I ActivityManager: Displayed com.android.settings/.Settings$WifiSettingsActivity: +394ms
+02-04T01:11:15.107 4778 7775 D WifiService: setWifiEnabled: true pid=6648, uid=1000
+02-04T01:11:15.108 4778 6199 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+02-04T01:11:15.190 3754 4871 E WifiHW : Failed to write wlan fw path param (Operation not permitted)
+02-04T01:11:15.192 4778 6199 E WifiStateMachine: Failed to reload STA firmware java.lang.IllegalStateException: command '37 softap fwreload wlan0 STA' failed with '400 37 SoftAP command has failed'
+02-04T01:11:15.194 4778 4778 E WifiController: WifiControllerWifi turn on failed
+02-04T01:11:36.552 7653 9184 I GCoreUlr: Registered for wifi state change updates
+02-04T01:11:56.996 7936 9838 I iu.UploadsManager: #reloadSettings(); account: -1; IU: disabled; IS: disabled; IS account: -1; photoWiFi: true; videoWiFi: true; roam: false; battery: true; size: STANDARD; maxMobile: 157286400
+02-04T01:13:11.523 4778 6691 D WifiService: setWifiEnabled: true pid=6648, uid=1000
+02-04T01:13:11.524 4778 6199 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+02-04T01:13:11.581 3754 4871 E WifiHW : Failed to write wlan fw path param (Operation not permitted)
+02-04T01:13:11.582 4778 6199 E WifiStateMachine: Failed to reload STA firmware java.lang.IllegalStateException: command '41 softap fwreload wlan0 STA' failed with '400 41 SoftAP command has failed'
+02-04T01:13:11.585 4778 4778 E WifiController: WifiControllerWifi turn on failed
+02-04T01:13:41.608 4778 7775 D WifiService: setWifiEnabled: true pid=6648, uid=1000
+02-04T01:13:41.609 4778 6199 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+02-04T01:13:41.710 3754 4871 E WifiHW : Failed to write wlan fw path param (Operation not permitted)
+02-04T01:13:41.711 4778 6199 E WifiStateMachine: Failed to reload STA firmware java.lang.IllegalStateException: command '42 softap fwreload wlan0 STA' failed with '400 42 SoftAP command has failed'
+02-04T01:13:41.713 4778 4778 E WifiController: WifiControllerWifi turn on failed
+02-04T01:13:42.522 4778 7775 D WifiService: setWifiEnabled: true pid=6648, uid=1000
+02-04T01:13:42.523 4778 6199 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
+02-04T01:13:42.602 3754 4871 E WifiHW : Failed to write wlan fw path param (Operation not permitted)
+02-04T01:13:42.605 4778 6199 E WifiStateMachine: Failed to reload STA firmware java.lang.IllegalStateException: command '43 softap fwreload wlan0 STA' failed with '400 43 SoftAP command has failed'
+02-04T01:13:42.606 4778 4778 E WifiController: WifiControllerWifi turn on failed
+02-04T01:13:46.917 10449 10524 I com.amazon.device.crashmanager.CrashDetectionHelper: Skipping crash report upload. WiFi/Ethernet is not connected AND upload over WAN is not allowed
+02-04T01:14:12.326 4778 6199 D WifiNative-HAL: Failing getSupportedFeatureset because HAL isn't started
+02-04T01:14:57.900 4778 6199 D WifiNative-HAL: Failing getSupportedFeatureset because HAL isn't started
+02-04T01:15:00.516 4778 6199 D WifiNative-HAL: Failing getSupportedFeatureset because HAL isn't started
+02-04T01:15:20.576 4778 6199 D WifiNative-HAL: Failing getSupportedFeatureset because HAL isn't started
+{quote}",1,0,,,,
+30,BUGBASH-32,Wifi disconnects random,"Phone Informations
+ * Weekly Build 25.1.2017
+ * Open Gapps 7.1.1 pico (28.01.2017)
+What you did:
+ * Clean flash: 
+You're using (if yes write which one) :
+ * AdAway
+ * Repro steps
+Since a few days a got random wifi shutdowns for no reason. I made a clean flash of lineageos with different versions. First the Lineageos 14.1 build of matssa with extra commits from xda. I had the errror there, too.
+Then I switched with a clean flash to the offcial nightly from the 25nd and had the same error again. I tested a few apps if they harm the wifi but they hadn't an effect. just left it like it was flashed and got the wifi shutdown, too.
+As you might see in the alogcat file there are two errors which might cause the wifi disconnect. E/netd (2480): netlink response contains error
+E/WifiHal (3196): wifi_get_packet_filter_capabilities: requestResponse() error: -524 I will upload a few logcats where the bug happend, so that you guys can see whats the reason for that. I did the logcat with ROOTalogcat on the phone. I'm using the phone normally and randomly the wifi crashes and reconnects again. At beginning I was using system profiles to change into wifi when i come home. Due to the error it kicked me out of my home profile all the time because it disconnected ramdomly from the wifi and I used this as a trigger. All other devices in the wifi are working normal. Another phone doesn't have problems with the wifi either.",0,0,,,,
+31,REGRESSION-690,Wifi issue with hidden ssid when wifi is allowed to turn of during sleep,"Over some time wifi simply dies. Turning off and on wifi does not help. Reboot or toggle airplane mode helps for a day or 2. Then it dies again.
+GUI shows all wifi points that was during the time of ""freeze"".
+Steps to replicate. Hide ssid. Allow wifi to turn of during sleep. Wait for a day or 2. Any other combination and the problem does not happen.
+Unknown if issue exist on all available builds.  But I guess all official builds has the issue.
+Side note. All devices get the same mac number. So it sounds like a driver issue.
+****.
+Device Used:
+    1- OS Name: android
+    2- Platform Name: android
+    3- Platform Version: 7.1.2
+    4- Platform Modal: XT1650-03
+    5- Resolution (WxH): 1440x2426
+.****",1,0,,,,
+32,BUGBASH-680,Wifi dies when using hidden ssid and allowing WiFi to turn of during sleep,"Wifi dies when using hidden ssids and allowing WiFi to turn of during sleep. Any other combination and I can not replicate this issue.
+When this happens gui remains to show my hidden ssids despite not being at home, nor does it detect any new ssids. Turning on and of WiFi does not make it work again. Reboot or toggle airplane mode fixes it temporarily. Can happen within 1 or 2 days.
+As far as I know this happened ever since first official build.",1,0,,,,
+33,REGRESSION-1673,No WiFi connection with new router,"No WiFi connection with new router (o2 HomeBox 6741). There were no problems with the old one.
+Tested on 2,4 and 5 GHz",0,0,,,,
+34,REGRESSION-1141,Data is not recovering after some hours on Wifi,"Hi,
+After some hours on Wifi, if I move away from home, the 3G data doesn't reenable, switching on/off plane mode doesn't resolve the problem, need to reboot.
+Best regards",0,0,,,,
+35,REGRESSION-732,wifi drops when playing games,"hello
+and IZ sorry to not specify a last known good build cause I tested all your builds and they all have the same problem the wifi keep connecting and disconnecting for some reason .. you can only notice the problem while playing games I could find this problem in 13.1 CM as well the only version of android that doesn't have it is the lollipop ...
+I search the whole internet for a solution without any help I find some points effect the problem hope they might help solving it
+1 Skype does make it happen more often 
+2 Airplane-mode ( for some reason when switching the phone to Airplane-mode the problem appears less than usual
+3 activating blue tooth does help the problem appears less than usual as well
+last thing to say ... the problem happen even with a clean installation of Lineage os using the main browser for some time making a file download over the wife make it happen and it happen like this 
+the wifi connected ( you see the wifi icon on the upper right near the mobile signal )
+suddenly the wifi icon disappears that is when you know that the wifi is dropped 
+wifi icon reappears thats when you know it reconnected
+I thought at first it is a router problem so I changed three routers and yet the problem is still there no matter what router I use or what wifi speed or band they all drops
+best regards",1,0,,,,
+36,REGRESSION-500,Wifi only connecting @ 72 mbps,I'm having this big issue. My wifi only connects @ 72 mbps max.,0,0,,,,
+37,REGRESSION-426,wifi out of range crashes system,Since build 20170424 when walking out of range of connected wifi the whole system crashes and reboots. This is reliably reproducable all the time.,0,0,,,,
+38,REGRESSION-406,WiFi won't work after Hotspot use,"When trying to activate a hotspot it fails multiple times before connecting. Upon turning off  and enabling wifi list of available networks doesn't show. Pull down menu shows available networks, but upon trying to connect, networks cannot connect...",1,0,,,,
+39,REGRESSION-369,Wifi connection keeps dropping,"This issue happens on any all the builds after March 10th up to April 14th(latest at the moment). The attaches log is from build lineage-14.1-20170414-nightly-shamu.
+WIFI drop: WIFI connects, then just randomly drops, and then connects again. This just keeps happening and no workaround fixes it.
+In one test (please check 2.jpg snapshot) I noticed that as soon as device gets LTE IPv6 connection setup (circled IPs) connections drop and device loses all the IPs.
+Looking at the logs, I notices following log entries which might give you a clue. An error happens, log says that IPs are going to be cleared, and wifi error 20 happens.
+4244 04-20T01:50:51.622 V/NativeCrypto(4797): Read error: ssl=0x8bfda460: I/O error during system call, *Software caused connection abort*
+4245 04-20T01:50:51.624 V/NativeCrypto(4797): SSL shutdown failed: ssl=0x8bfda460: I/O *error during system call, Broken pipe*
+4246 04-20T01:50:51.643 D/CommandListener(2242): *Clearing all IP addresses* on wlan0
+4247 04-20T01:50:51.647 E/GCM (4797): *Wifi connection closed with errorCode 20*",0,0,,,,
+40,REGRESSION-186,WiFi won't work after Hotspot use,"After using and turning off the Hotspot, WiFi can sees the networks thru the dropdown menu, but it won't connect, and opening the WiFi config menu, the WiFi shows disabled, and it's not possible to enable it again, unless restarting the phone.",1,0,,,,
+41,REGRESSION-185,WiFi configuration for ALBtelecom Albania,"Integrating in LineageOS, a free WiFi configuration which is available in all Albania. SSID: ALBwifi with EAP-SIM authentication
+o   SSID: ALBwifi
+o   Key Management: WPA2
+o   Encryption Algorithm: AES
+o   Authentication: EAP-SIM
+o   MCC: 276
+o   MNC: 03
+http://www.albtelecom.al/en/individual/internet/wi-fi/coverage-map/ http://www.albtelecom.al/en/individual/internet/wi-fi/albwifi/",0,0,,,,
+42,REGRESSION-111,WiFi connection crashes framework,"This is *probably* the same as REGRESSION-90 and REGRESSION-106; it seems to be an issue affecting multiple devices in the latest nightly.
+Upon initial boot, if WiFi is on, the framework crashes and soft restarts (presumably as WiFi attempts to connect). After this, the phone has trouble scanning WiFi networks, but eventually something happens to trigger another framework crash and restart, every few minutes (presumably it eventually decides to try to reconnect). Disabling WiFi fixes the repeated restarts. Booting with WiFi off and then enabling WiFi causes a reboot within a few seconds.
+The attached logcat was taken by rebooting with WiFi off, waiting for things to settle a bit, and then enabling WiFi; it covers the period from the state toggle to the crash. I censored out saved SSIDs and BSSIDs for privacy, but please let me know if you need more. I replaced the current network with ""SELECTED-NETWORK"", bssidT01:bb:bb:bb:bb:bb (I wouldn't care if it were my network, but this is a client's office).
+Sorry for the old last good date; I'd been running the first public nightly before updating today. Given other people's reports my *guess* is the issue was introduced between the last two nightlies (CAF update?), but I can't confirm that.",1,0,,,,
+43,REGRESSION-90,Automatically reboot when turn wifi on.,"That's it, when i switch WiFi on, it just reboots directly on lineageOS animation, i do not see MOTO logo.
+As you will see, the error appears atT01:42:04.053",1,0,,,,
+44,BUGBASH-1384,VoLTE & WiFi Calling Grayed Out,"Similar to BUGBASH-1304 for merlin, the m8 build doesn't seem to support VoLTE nor WiFi calling. In Testing menu under Phone Information,  the Provisioned switch for these two features are grayed out.  Both features worked using the T-Mobile/HTC stock ROM.  Attaching logcat, bugreport, and a screenshot in the zip file.",0,0,,,,
+45,BUGBASH-1235,Wifi/Sim/Radio and other Bugs,"Sometimes I Get A WiFi Issue I get a Question mark Next to it.(I know When there's no Internet there's an x next to it)
+So I turn it Off/On 
+Delete the Password/Reenter it.
+It Says Fetching IP address....
+Saved...
+And it stays that way for 2-3 minutes it does it when I'm using internet (YouTube,Browsing.... Etc)
+(I don't know if it's a Router or A Phone problem)
+My SIM Card has Phone Numbers on it but they don't Show Up. It doesn't even appear in the Contact Options although I can Use 3G with it.
+I Have No FM Radio. I tried to install it but it doesn't work.
+(I mean real Radio not internet Radio)
+When I play Music and Shut the Screen Off. It doesn't show me What Song is playing. I Just have the Play/Stop/Next/Previous Buttons. (It's not a Tag problem. It works perfectly on other Devices)
+The Camera App needs more Updates. And sometimes it takes bad pictures though I use Focus and all.
+The Video recording lags.
+Weather Provider Doesn't work.
+Automatic Updates always fail to download. So I always download them on the website Manually. 
+Please fix this problems.
+Thank You.",0,0,,,,
+46,BUGBASH-1121,Wifi doesn't detect my local network,I can see the networks of others like for example that of the neighbor and also open networks but not mine. My router is a Netgear. And also when I set the Wifi region code it resets at next startup.,0,0,,,,
+47,BUGBASH-904,WiFi on 5GHz band not scanned,"Starting with the latest build for flo (01.08.2017), no wifi network on 5GHz band is shown anymore. Seems only 2.5GHz networks are scanned & shown.
+IMO interesting section in logcat starts at 08-07T01:51:22.763",0,0,,,,
+48,BUGBASH-821,crash when switching from Wifi to mobile,"My phone crashes a lot, this logcat contains several cashes. The last one was definitely when the Wifi signal was lost and the phone switched to mobile internet.",0,0,,,,
+49,BUGBASH-768,unable to connect to a WiFi network,"IZ now unable to connect to my home WiFi network after installing build Jul03, earlier builds did not connect to my Office network alone now both do not work.",1,0,,,,
+50,BUGBASH-724,Can't restore from Google cloud over WiFi.,"â€¢ ZTE Axon 7 A2017U
+â€¢ Needed to clean reinstall TWRP, LOS 14.1 dated 19 June 2017 and GAPPS.
+â€¢ Previously had GAPPS and Play Store apps installed and running for several months and was expecting to simply restore from the cloud (Google).
+â€¢ After going through the initial setup of language selection and SIM 1 or 2 assignment to data/phone/SMS, there is no option to select WiFi network prior to selecting backup source. This forces selection of setup as new device to continue-the WiFi selection step then occurs.
+â€¢ Same problem with both SIMs removed.
+â€¢ Maybe related to changelog 10-""WiFi is now enabled on first boot after a factory reset,
+ preventing a crash in our Setup Wizard further in the setup
+â€¢ Unable to capture logcat in this situation.",0,0,,,,
+51,REGRESSION-833,calling,"On my LG G4 h815 phone, time to time, usually once or two times a weak, when began to call, call didin`t connects, and when you pres red button to hang up, shows, that call is ""hanging up"", but nothing happens. You can do everything, use your apps, browse internet, everything, but not to call, because all the time, when you try to call you see ""hanging up"" window. Dont helps ""flight mode"", killing phone program. Waiting didin`t halps too. I waited more then 1 hour, but call progress still was ""Hanging up"". The worse  thing is that during this time ""power"" button is inactive, so there no way to reboot phone. You nead physically take away phone battery to reboot phone.
+The same problem was on all two or three builds I tried before. All the same, so 29/May/17 build have the same problem.",0,0,,,,
+52,REGRESSION-1219,All Calls are Showing as Missed Call,Any Received or Dialled calls are showing as Missed calls,0,0,,,,
+53,BUGBASH-55,Current Call & incoming Calls not shown,"When you get a call, the pphone rings and vibrates but nothing is shown on the display. AFter the call you see, that you've a missed call.
+If you call somebody the call isn't shown on the display. You see the homescreen, if you press the phone icon you get in the normal interface of phone app and you can choose to got o the current call, but again only the homescreen is shown.
+Also neither of this calls is shown in the status bar.",0,0,,,,
+54,REGRESSION-1208,Call Issues,"When placing call, lag happens, but also calls that I make sometimes drop.
+Also, when person on the other line ends call, there's a faint ""dropping call beep"" sound.",0,0,,,,
+55,REGRESSION-795,Uncoming calls,"I use a Wileyfox storm.
+When i have a new call, the people don't here me until I put loud speaker. It's like the mic doesn't work if speaker is not set.
+Sound is really bad since this build.",0,1,,mal escrito,,
+56,BUGBASH-1159,cannot place calls,I cannot place calls. When I try to place calls either the call stops as soon as I place it or when  call a number the SIM selection dialogue doesn't show up at all. I tried to wipe the data and cache and also re-installed the Gapps but it isn't working.,0,0,,,,
+57,BUGBASH-837,problems to call,"Hello,
+I have inconvenient disconnections in mobile network
+-when I call, I have a lot of time : mobile network not available
+-the correspondents have difficulty in contacting me
+Thanks",0,0,,,,
+58,BUGBASH-672,No sound for some calls,"When doing phone calls often (once every 2 to 5 calls) the other party cannot be heard.
+The reproduction scenario is as follows (this works virtually always):
+ # The phone is booted
+ # AtT01:28:26 a call is initiated from another phone
+ # AtT01:28:41 call is picked up
+ # Call can be heard in both directions
+ # AtT01:28:59 call is hung up
+ # AtT01:29:12 second call is initiated from another phone
+ # AtT01:29:22 the call is picked up
+ # The other (calling) party cannot be heard
+ # AtT01:29:52 the call is hung up
+The issue has been observer with different weekly builds.
+Wiping data produced very strange results - when reproducing the issue the other party could be heard, but microphone didn't work.
+In Mobile network settings, setting Preferred network type to 2G didn't solve the issue.
+The issue was reproduced with Marshmallow and Nougat modems (i.e. bootloader and modem upgrade didn't help).",0,1,,,,
+59,BUGBASH-430,fix call,"everything is good but there is an issue that I cant swith between different sim cards while dialing. 
+Is there a solution for it? 
+I would appreciate it if you could solve it. 
+Thanks.",0,0,,,,
+60,BUGBASH-11,No audio during call,"Cant hear audio during calls, the other caller cant hear my voice as well therefore i guess microphone is not working as well. The issue only occur on normal calls . Skype calls have no issues.",0,1,,,,
+61,REGRESSION-1205,Do Not Disturb Turning On Automatically while calling or receiving a call,*Do Not Disturb* Getting on automatically while calling or receiving a call. Sometimes after ending the call *Do Not Disturb* stays on and *+creating massive problems to deliver notifications...+*,0,0,,,,
+62,REGRESSION-437,Call timer reports wrong call time,"The call timer starts counting the call time from the tab on call second not from the real beginning of the call which should be when the destination called person answers the call.
+Also, the vibrate on answer is broken as well due this issue.",0,0,,,,
+63,REGRESSION-517,There's a typo in the Call settings/GSM(CDMA) call settings/Call forwarding menu header.,"There's a typo in the Call settings/GSM(CDMA) call settings/Call forwarding menu header.
+ ""Cal{color:#ff0000}*lF*{color}orward Options"" - there's a missing space between ""Call"" & ""Forward"", meaning it should read: ""Cal{color:#14892c}*l F*{color}orward Options"".
+ I'm not sure if this is a LineageOS related typo, or Google related typo, since I decompiled the Google Dialer app and coresponding service APKs and couldn't find the string there. Maybe this is a typo in LineageOS (klte model).
+The issue can be found in the *lineage-14.1-20170510-nightly-klte-signed.zip* as well as in the *lineage-14.1-20170517-nightly-klte-signed.zip* build.
+I've attached a screenshot for this typo. Forget my selected latest good build date, unfortunately I had to pick one.",0,0,,,,
+64,REGRESSION-1285,Germany: Emergency-Call (E-Call) 110 is not possible,"Dear all,
+yesterday I was a witness at a heavy accident in germany an I had to dial the ""110"" (that is the equivalent of the emergency-call-no 911 in the USA).
+Lineageos hadn't start the call. Instead of this it change the window and hang up for a short time.
+Fortunaley I wasn't alone and I could use the phone of a friend with. He had the same phone with the normal android software.
+I can't tell you, if the emergency-call-no. 110 in germany have ever worked in the past versions of linageos, because I haven't need this no. before.
+Best regards.",0,0,,,,
+65,REGRESSION-1027,Unable to pick Incoming call  and unable to outgoing  call .,"NICE ROM,IZ using last 6 month without error . Now   my phone only ringing and There is not show call received option . and i have try to call but unable to call from my mobile . during the dial no ( call)  showing do not disturb option on TOP Bar . Please help how to fix this issue.
+Problem with Point.
+ # During Incoming call - Phone Ringing - not call pickup option - after that showing Miss call.
+ # During Outgoing Call -  Unable to Outgoing call - Showing in Top bar during call - do not disturb icon .
+Please suggest me and Help me for this problem.",0,0,,,,
+66,BUGBASH-559,Calling or being called causes all sounds to go the front speaker,"After being called or when you call someone yourself, all sounds (like from YouTube) will be played from the front speaker used for calling. This problem will revert when you restart the phone.
+Device: Huawei G620s-L01 using lineage-14.1-20170508-nightly-cherry",0,0,,,,
+67,REGRESSION-527,Minor inconsistency in the Call settings/CDMA call settings menu header compared to Call settings/GSM call settings menu header,"Minor text inconsistency in header string between Call settings/GSM call settings and Call settings/CDMA call settings. When entering Call settings/GSM call settings the header reads 'GSM call settings', which is correct. However, when entering Call settings/CDMA call settings the header reads '{color:#ff0000}Additional{color} CDMA call settings'. To have a consistency here, the word 'Additional' should be removed, so that it just reads: '{color:#14892c}CDMA call settings{color}'.
+I've attached 3 screenshots to show the inconsistency.
+Ignore the last good build in this Jira ticket above, as Jira requested a last known good build.
+Would be happy to see this fixed in a upcoming build/nightly build.
+Is there a way to change from Medium Priority to Minor or similar? Haven't found it yet.
+Many many thanks to Kim Le|https://deref-1und1.de/mail/client/uE4i5FRj8QQ/dereferrer/?redirectUrl=https%3A%2F%2Fjira.lineageos.org%2Fsecure%2FViewProfile.jspa%3Fname%3DElektroschmock for fixing my last typo :)",0,0,,,,
+68,REGRESSION-1746,Not able to receive call,unable to receive call from sim card 1,0,0,,,,
+69,REGRESSION-1637,Can't Hear Outgoing Calls,"Using the Phone app, I call a number and I can't hear anything out of the earpiece.  But switching to speaker mode and back, then it works.",0,1,,,,
+70,REGRESSION-1636,The screen turns off during a call,"The screen turns off immediately after starting a call (usual mobile call or skype for business), and it is not possible to turn it on until the call finished. Therefore I can't access the call controls (un-mute the microphone is one of the most important, another one is dial pad) and can't even finish the call.",0,0,,,,
+71,REGRESSION-1569,Echo on speaker call,"I have been having this problem since I have installed lineageOS ROM on my phone LeEco Max2.
+The problem is
+ # When I make a call from my phone to person A
+ # The call is connected
+ # Now, I put my phone in speaker mode
+ # The person A gets echo on his side
+ # If I turn off speaker then person A do not get echo
+ # If I turn on the speaker again then person A gets echo
+ # On my side, I can hear the voice clearly
+I would appreciate if this can fixed.",0,0,,,,
+72,REGRESSION-1286,Reboot after a missed call,"This problem is 100% reproducible on my Sony Xpria V. When I miss a call the phone reboots.
+I suspect that the corresponding log is: 
+{noformat}
+10-18T01:59:53.449 5058 5681 I Telecom : CallAudioRouteStateMachine: Message received: SWITCH_FOCUS=4001, arg1=1: CSW.sDc->CAMSM.pM_1002->CARSM.pM_SWITCH_FOCUS@AIU_1_2
+10-18T01:59:53.755 5058 5558 I ActivityManager: Setting hasTopUi=true for pid=5287
+10-18T01:59:54.285 5058 5088 I VrManagerService: VR mode is disallowed
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: *** FATAL EXCEPTION IN SYSTEM PROCESS: main
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: java.lang.NullPointerException
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at java.util.concurrent.ConcurrentHashMap.putVal(ConcurrentHashMap.java:990)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at java.util.concurrent.ConcurrentHashMap.putIfAbsent(ConcurrentHashMap.java:1522)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.telecom.ui.MissedCallNotifierImpl.showMissedCallNotification(MissedCallNotifierImpl.java:285)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.telecom.ui.MissedCallNotifierImpl.showMissedCallNotification(MissedCallNotifierImpl.java:281)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.telecom.CallLogManager$1.onLogCompleted(CallLogManager.java:178)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.telecom.CallLogManager$LogCallAsyncTask.onPostExecute(CallLogManager.java:422)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.telecom.CallLogManager$LogCallAsyncTask.onPostExecute(CallLogManager.java:410)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at android.os.AsyncTask.finish(AsyncTask.java:667)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at android.os.AsyncTask.-wrap1(AsyncTask.java)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at android.os.AsyncTask$InternalHandler.handleMessage(AsyncTask.java:684)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at android.os.Handler.dispatchMessage(Handler.java:102)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at android.os.Looper.loop(Looper.java:154)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.SystemServer.run(SystemServer.java:383)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.server.SystemServer.main(SystemServer.java:237)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at java.lang.reflect.Method.invoke(Native Method)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:889)
+10-18T01:59:54.535 5058 5058 E AndroidRuntime: at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:779)
+10-18T01:59:54.767 6204 8533 E ActivityThread: Failed to find provider info for com.google.android.gsf.gservices
+10-18T01:59:54.782 6204 8533 E AndroidRuntime: FATAL EXCEPTION: gcm-task#1
+10-18T01:59:54.782 6204 8533 E AndroidRuntime: Process: com.google.android.gms, PID: 6204
+10-18T01:59:54.782 6204 8533 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+{noformat}",0,0,,,,
+73,REGRESSION-1079,Bluetooth does not work for calls,"I can not make calls for it, the phone is mute, I tried other phones and I have the same problem, after that failure, I need to restart the phone to get it to call since it hangs and neither in the phone I can hear the calls",0,1,,,,
+74,REGRESSION-986,Bluetooth call problem,"I can't make a call via car bluetooth set. There is proper connection and I can listen music from my phone, but when I'm making a call (or receiving one) I can hear loud static noise (and sometimes person who is calling; when IZ making a call I can't hear nothing except the noise). The person on the other side of the call hearing only loud noise. It hapens only while IZ trying to call. Bluetooth connection is good and I can clearly hear music and incoming call signal.
+When I was using original Samsung software bluetooth worked perfectly.
+P.S.
+I set ""Last good build date"" as 1/Jan/08 because I can't leave it blank, but it never worked when I was using (from March this year)",0,0,,,,
+75,REGRESSION-645,Screen don't respond during calls,"The screen does not respond when I make or receive calls, apparently it is a problem with the proximity sensor or something like that",0,0,,,,
+76,REGRESSION-136,Phone locks while on call,"If I get a call or make a call from my phone. After disconnecting the call my phone is locked. I have to put in my password/pin/pattern to unlock my phone again.
+Shouldn't the phone avoid getting locked after a call?",0,0,,,,
+77,REGRESSION-59,FB Messenger calling,"Everytime i tap on call button in Facebook Messenger, the app crashes. Happens on all custom ROMs. OnePlus 3T",0,0,,,,
+78,BUGBASH-1158,Cannot Make Video calls.,When I Try to make video calls the calls just  either stop or the call drops after receiving party picks up the call. Please solve it.,0,0,,,,
+79,BUGBASH-884,crash after I finished the calling,"Hello,
+crash after I finished the calling.
+My phone restarted
+Thanks",0,0,,,,
+80,BUGBASH-697,In-call volume can't be changed,"It's impossible to change in-call volume in ""standard"" mode, and while using headphones. If you hit the button to increase volume, on the screen all looks OK - the bar is changing, but the volume is still the same. On loudspeaker mode everything works fine.",0,0,,,,
+81,BUGBASH-668,Call manager in OnePlus2,"The Call manager appears to be erroneous. I can go into phone calls and make a phone call, but when the call is connected; I do not get a form on my device to see the ongoing call, so i can hang up and perform and in call key operations. Equally when i take a call it can only be done with the volume controls, as once again I have no popup call form",0,0,,,,
+82,BUGBASH-641,calling over VoLte can't work,"Hey Lineage OS developers,
+I installed Lineage ROM on my Asus Zenfone2 Laser(ZE550KL) Z00L phone on 27-April-2017 and weekly updating.
+First , I like to thank you for making this OS and fixing bugs every week. This takes a lot of effort. You guys are really hard working I can tell ... because I found it better than the Android Stock ROM.
+IZ facing some issues so it mention bellow,
+ #  Back camera: my phone back camera not working bcoz camera switch button not appear.
+ # flashlight not working.
+ # on last build lineage-14.1-20170602-nightly-Z00L-signed getting problem calling over VoLTE.
+For more information i attached file it help you
+Thank you",0,0,,,,
+83,BUGBASH-250,Call volume can't be change,When placing a call you can't lower the volume it would stay at max.,0,0,,,,
+84,BUGBASH-108,Phone Call Echo,"When making a phone call with my Nexus 6, the ringing sound drops in and out with a ton of static. Once the person on the other end picks up the call, when they talk they can hear a totally clear echo of themselves.
+This is during a normal call, not with speaker mode on at all and I have confirmed that other users are having same issue on Shamu over on the subreddit.",0,0,,,,
+85,BUGBASH-12,Low In call volume,the in call volume of the microphone is very less .. barely audible on full volume if we are outside.. please fix this issue asap .. thanks in advance,0,0,,,,
+86,REGRESSION-1687,Call recipients hear almost unintelligible distortion during outgoing calls,"After the Feb. 8, 2018 update, people I call claim they hear a lot of ""digital"" distortion on their end of a call, and can barely understand what I'm saying. This happens whether the call is outgoing or incoming. Heard no such complaints prior to this update.",0,0,,,,
+87,BUGBASH-858,Telephony: no call audio when call starts with earphones jack inserted,"Thi issue is still present in 20170726 build
+If you start or receive a call with earphone connected to Samsung Galaxy S4, you'll get NO phone AUDIO on earphone, speaker or bluetooth device.
+This issue was present even on CyanoGenMod 13.0
+Galaxy S4 cm-13.0-20160820-SNAPSHOT-ZNH5YAO0J3-jfltexx.zip
+To use earphones I have to start a call, wait for ring sound then plug the earphones jack.
+How can I help you to solve?",0,1,,,,
+88,REGRESSION-465,in-call vibration call connect vibration doesnt work also call timer displays wrong time,the call connect vibrate feature doesn't work even though it it enabled from settings sound and vibration also the call timer is not accurate it displays the time from dialed rather than call received,0,0,,,,
+89,BUGBASH-1151,Typo / Inconsistency in Phone/Settings/Calls/Call forwarding/Voice/Call forwarding settings menu header text,"*This one was already reported in BUGBASH-1117 which was rejected due to a missing logcat.*
+*In this one there's a logcat.txt and radio.txt attached.*
+The dash between 'Call' & 'forwarding' in the Phone/Settings/Calls/Call forwarding/Voice/Call forwarding settings menu header text should be removed to have a consistency with other menus. I also compared this with my Nexus 5X/Nexus 6 and Pixel and even Nokia 8 TA-1012 device (all pure Android). They are all without the dash.
+It should just read:
+""+{color:#14892c}*Call fo*{color}rwarding settings""
+... without the dash. I've attached screenshots (4) for further details.
+This report was for the 20/09/17 build, but the typo exists in all other releases after that as well and as far as I could see for other devices too.",0,0,,,,
+90,BUGBASH-1117,Typo / Inconsistency in Phone/Settings/Calls/Call forwarding/Voice/Call forwarding settings menu header text,"The dash between 'Call' & 'forwarding' in the Phone/Settings/Calls/Call forwarding/Voice/Call forwarding settings menu header text should be removed to have a consistency with other menus. I also compared this with my Nexus 5X/Nexus 6 and Pixel and even Nokia 8 TA-1012 device. They are all without the dash.
+It should just read:
+""+{color:#14892c}*Call fo*{color}+rwarding settings""
+... without the dash. I've attached screenshots (4) for further details.
+*I've checked this in the lastest LineageOS for the Galaxy S5 as well (klte). Same on those devices.*",0,0,,,,
+91,BUGBASH-1214,Use SIP to call numbers in SIP (Internet Call) Contacts field,"Contacts have a ""SIP"" or ""Internet Call"" number.
+This should be called with the SIP account if one is configured in Phone Settings.
+Instead the number is parsed:
+ - if it is a phone number (+441234567890), regular telephony is used
+ - if it is a sip address (e.g. sip:+441234567890@sip.voipraider.com) then SIP account is used
+This behaviour is against the user's Call Settings (Use SIP for Internet Calls only) and also very inconvenient. It has been present since at lest KitKat on all Android phones and has prevented users from using the SIP feature ever since.
+There is a fix available here: https://review.lineageos.org/#/c/191363/
+Please have a look and comment.",0,0,,,,
+92,REGRESSION-1726,Speaker and earpiece both active during most calls,"Expected: When in a call via an application, only 1 of the 2 device speakers should be active, either the bottom speaker or the ear piece speaker.
+Actual: Both speakers sound at the same time, when I chose enable speaker inside the apps, the sound is from the same source, just louder.
+Tested on: WhatsApp, Messenger Lite, Skype, Viber
++*Unknown Last good build date*+",0,0,,,,
+93,REGRESSION-1720,unable to configure call forwarding,"When I try to go call forwarding options=>Voice
+I get the error message
+{code:java}
+Call settings error
+Turn on the radio before viewing these settings.{code}",0,0,,,,
+94,REGRESSION-1683,Calls do not work (Galaxy S6),"Hello,
+When I make a phone call, the Phone app crashes and stops working. In addition, the phone restarts. I hope they can solve the problem. Thank you.
+Sincerely,
+Aitor S.",0,0,,,,
+95,REGRESSION-1290,Android Auto fails after Call,"I'm using android auto in my car. But when a phone call comes in or I call someone all audio dissappears (Waze, music, Google now, etc.)
+My car is a Seat Ibiza 2016 with the Full Link option (for AA) activated.
+PS. I bought my phone after I activated the AA functionality. So last good build is probably right but will not be the last known good build.
+It's been tested with a nexus 5X with latest updates (Android 8.0.0) and work perfectly.",0,1,,,,
+96,REGRESSION-1195,Ringtone on after answering a phone call,"Hi,
+after flashing the latest version of Lineage OS on my Samsung Galaxy S5 (klte), I noticed that after answering a phone call with my phone set on mute / vibrate, the ringtone is set back on as soon as i hang up the call.
+ * Steps to reproduce the issue:
+ # Hang up the phone call and check the status bar
+ # Get a call and answer it
+ # Check that on the status bar the icon associated to mute / vibrate is on
+ # Turn off the ringtone of your phone (either on mute or on vibrate)
+ * Expected result
+ # Nothing changes in the ringtone settings
+ * Observed results
+ # As soon as the phone call is hung up, the ringtone is back on.
+This issue may lead to some inconvenience, especially when the phone is utilized in an quiet environment when ringtones are not supposed to be on.
+Can you please have a look at it?
+Thank you and best regards
+Dan",0,0,,,,
+97,REGRESSION-1148,Vibrate mode off after incoming call,"When my phone on vibrate mode (vibrate only) and hapenns incoming call, after a call vibrate mode is turn off.",0,0,,,,
+98,REGRESSION-1069,Phone screen turns off in call,"I attempted to call my voicemail in the Google Phone app (v. 11.0.164102751) by pressing and holding on ""1"". As soon as the call starts, regardless of whether the proximity sensor is covered or not, the screen turns off. The screen cannot be turned back on until the call ends. Functions such as activating the camera (double-click power) and the flashlight (hold power) still work, but nothing is displayed on screen at all.",0,0,,,,
+99,REGRESSION-1053,Calling Problem with SM-N900,"Hi IZ new User of Lineageos - Today, I have Installed < open_gapps-arm-7.1-full-20170901.zip>  Lineageos on my Mobile SM-N900 -Samsung Note 3.After installed this rom.  IZ unable to calling/receiving  from my mobile.
+Issue is :-
+* I don't know what is the Last good build date                    
+* during incoming call not show call receiving option.
+* Only phone is ringing , not auto light glow, and No incoming call information showing, showing only miss call after incoming call disconnect.
+* We have try to call from Mobile to other no. but not calling and showing on top bar do not disturb option .",0,0,,,,
+100,REGRESSION-939,loud sound when call is ended,"loud sound comes out of speaker when call is ended or hung up even if call is not on loud speaker. if the call is accepted via ear piece still while hanging up sound comes from loud speaker.
+this is not corrected from last two builds.
+please see through it.",0,0,,,,
+,,,, ,,,,,
+,,,,,,,,,
+,,,, ,,,,,
+,,,, ,,,,,
+,,,, ,,,,,
+,,,, ,,,,,
