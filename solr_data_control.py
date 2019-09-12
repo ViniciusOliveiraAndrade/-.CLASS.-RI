@@ -74,14 +74,14 @@ def print_graphs(precisoes,coberturas,cores,querys):
             fig.add_trace(go.Scatter(
                 x=x,
                 y=precisoes[core][query],
-                name = "Core: "+core+" Query: "+query,
+                name = "QT: "+str(len(precisoes[core][query]))+" \nQuery: "+query,
                 connectgaps=True
             ))
             print("FIM: " +query)
         
         fig.update_layout(
             title=go.layout.Title(
-                text="Core",
+                text="Core: "+core,
                 xref="paper",
                 x=0
             ),
