@@ -3,6 +3,8 @@ import requests
 import json
 import csv
 
+# https://plot.ly/python/table/
+
 def generate_matriz_relevancia (json_source, matriz_directory = "matriz_relevancia.csv"):
     with open(json_source,"r") as arq_json:
         data = json.load(arq_json);
@@ -111,3 +113,8 @@ def print_graphs(precisoes,coberturas,cores,querys):
         print("FIM: " +core)
         fig = None    
 
+def generate_tables(precisoes,coberturas,cores,querys):
+    fig = go.Figure(data=[go.Table(header=dict(values=['<b>CORES</b>', '<b>PRECISÃO</b>', '<b>COBERTURA</b>', '<b>F-MEASURE</b>', '<b>TOTAL RETORNADO</b>']),
+                    cells=dict(values=[cores, [95, 85, 75, 95], [95, 85, 75, 95], [95, 85, 75, 95], [95, 85, 75, 95]]))
+                        ])
+    fig.show()
