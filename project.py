@@ -9,7 +9,7 @@ matriz_relevancia = sdc.get_matriz_data("matriz_relevancia.csv",querys)
 
 precisoes,coberturas = sdc.analyze_accuracy_coverage(cores,querys,return_core,matriz_relevancia)
 
-# sdc.print_graphs(precisoes,coberturas,cores,querys)
+sdc.print_graphs(precisoes,coberturas,cores,querys)
 
 row = sdc.generate_tables(precisoes,coberturas,cores,querys)
 
