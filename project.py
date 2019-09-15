@@ -1,6 +1,6 @@
 import solr_data_control as sdc
 
-cores = ["core_Nstop_Nstem","core_Nstop_stem","core_stop_Nstem","core_stop_stem"]
+cores = ["core_Nstop_Nstem","core_stop_Nstem" ,"core_Nstop_stem","core_stop_stem"]
 querys = ["enabling wifi it does not connect","no audio is heard on calling"]
 
 return_core = sdc.get_data_from_solr(cores,querys)
@@ -11,4 +11,13 @@ precisoes,coberturas = sdc.analyze_accuracy_coverage(cores,querys,return_core,ma
 
 # sdc.print_graphs(precisoes,coberturas,cores,querys)
 
-sdc.generate_tables(precisoes,coberturas,cores,querys)
+row = sdc.generate_tables(precisoes,coberturas,cores,querys)
+
+print("PRECISOES")
+print(precisoes)
+print("=========="*20)
+print("COBERTURAS")
+print(coberturas)
+print("=========="*20)
+print("ROWS")
+print(row)

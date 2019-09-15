@@ -114,7 +114,58 @@ def print_graphs(precisoes,coberturas,cores,querys):
         fig = None    
 
 def generate_tables(precisoes,coberturas,cores,querys):
-    fig = go.Figure(data=[go.Table(header=dict(values=['<b>CORES</b>', '<b>PRECISÃO</b>', '<b>COBERTURA</b>', '<b>F-MEASURE</b>', '<b>TOTAL RETORNADO</b>']),
-                    cells=dict(values=[cores, [95, 85, 75, 95], [95, 85, 75, 95], [95, 85, 75, 95], [95, 85, 75, 95]]))
-                        ])
-    fig.show()
+    
+  
+    row = {}
+    for query in querys:
+        row.update({query:{}})
+        for core in cores:
+            qtCo = len(coberturas[core][query])
+            qtPr = len(precisoes[core][query])
+            
+            cobertura = coberturas[core][query][qtCo-1]
+            precisao = precisoes[core][query][qtPr-1]
+            fmeasure = (2*precisao*cobertura) / (precisao+cobertura)
+            
+            row[query].update({core:[precisao,cobertura,fmeasure,qtCo]})
+
+
+    for i,query in row.items():
+        ps = []
+        cs = []
+        fs = []
+        rs = []
+        for j,core in query.items():
+            ps.append(core[0])
+            cs.append(core[1])
+            fs.append(core[2])
+            rs.append(core[3])     
+        
+        fig = go.Figure(data=[go.Table(header=dict(values=['<b>CORES</b>', '<b>PRECISÃO</b>', '<b>COBERTURA</b>', '<b>F-MEASURE</b>', '<b>TOTAL RETORNADO</b>']),
+                        cells=dict(values=[cores, ps, cs, fs, rs]))
+         ])
+
+        fig.update_layout(
+            title=go.layout.Title(
+            text="Query: "+i,
+            xref="paper",
+            x=0
+        ),
+            xaxis=go.layout.XAxis(
+            title=go.layout.xaxis.Title(
+            text="Coverage",
+            font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="#7f7f7f"
+        )
+        )
+        )
+        )
+
+
+        fig.show()
+    return row
+
+
+
